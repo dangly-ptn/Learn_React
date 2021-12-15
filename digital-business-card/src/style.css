@@ -1,0 +1,104 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, sans-serif;
+  height: 100vh;
+  background-color: #282d35;
+}
+
+form {
+  display: block;
+  margin: auto;
+  width: 400px;
+  border: 1px solid white;
+  border-radius: 20px;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.avatar {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px 20px 0 0;
+  width: 400px;
+}
+
+.name {
+  text-align: center;
+  color: white;
+}
+
+.job {
+  text-align: center;
+  color: coral;
+  font-size: 17px;
+}
+
+.address {
+  text-align: center;
+  color: white;
+  font-size: 17px;
+}
+
+.btn {
+  display: block;
+  text-align: center;
+}
+
+button {
+  width: 150px;
+  text-align: center;
+  height: 35px;
+  border: 1px solid white;
+  background: white;
+  border-radius: 5px;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.email {
+  background: darkblue;
+  color: white;
+}
+
+.email:hover {
+  background: white;
+  color: darkblue;
+  border: 1px solid darkblue;
+}
+
+.linkedin {
+  margin-left: 20px;
+}
+
+.linkedin:hover {
+  background: darkgrey;
+}
+
+main {
+  margin-left: 20px;
+  margin-right: 20px;
+  color: white;
+}
+
+footer {
+  display: block;
+  margin: auto;
+}
+
+.img-footer {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-left: 100px;
+}
+.img-footer img {
+  width: 50px;
+  color: white;
+}
