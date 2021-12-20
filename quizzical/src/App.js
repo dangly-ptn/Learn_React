@@ -2,6 +2,9 @@ import React from 'react'
 import Main from './Main'
 import { nanoid } from 'nanoid'
 
+// 5 questions: https://opentdb.com/api.php?amount=5&category=18&difficulty=easy&type=multiple
+// 10 questions: https://opentdb.com/api.php?amount=10&category=18&difficulty=easy&type=multiple
+
 export default function App() {
 
   const [quizsData, setquizsData] = React.useState([])
@@ -29,9 +32,8 @@ export default function App() {
     quizsData.length > 0 ?
       <Main questions={questions} />
       :
-      <div class="container">
+      <div className="container">
         <h1>Quizzical</h1>
-        <h3>Some description if needed</h3>
         <button
           onClick={startQuiz}
           className="check"

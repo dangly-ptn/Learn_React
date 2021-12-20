@@ -7,6 +7,7 @@ export default function Main(props) {
   const correctAnswerArray = props.questions[0].correct_answer
   let myAnswersArray = []
   const [correct, setCorrect] = React.useState(false)
+  const [scored, setScored] = React.useState(0)
 
   function handleChange(answer) {
     if ((correctAnswerArray.indexOf(answer) > -1)) {
@@ -15,8 +16,10 @@ export default function Main(props) {
   }
 
   function checkAnswer() {
-    if (myAnswersArray.length === 5) {
+    if (myAnswersArray.length === correctAnswerArray.length) {
       setCorrect(true)
+    } else {
+      setScored(myAnswersArray.length)
     }
   }
 
@@ -33,10 +36,9 @@ export default function Main(props) {
   function setAnswer(answersArray) {
     const shuffleAnswersArray = shuffleArray(answersArray)
     return shuffleAnswersArray.map(shuffleAnswer => (
-      <label className="checkbox">
+      <label className="checkbox" key={nanoid()}>
         <input type="checkbox"
           onChange={() => handleChange(shuffleAnswer)}
-          key={nanoid()}
         />
         {shuffleAnswer}
       </label>
@@ -56,7 +58,7 @@ export default function Main(props) {
 
   return (
     correct ?
-      <div class="container">
+      <div className="container">
         <Confetti />
         <h1>Congratulations</h1>
         <button
@@ -67,13 +69,14 @@ export default function Main(props) {
         </button>
       </div>
       :
-      <div class="container">
+      <div className="container">
         {quizs}
+        <h2 className="scored">You scored {scored}/{correctAnswerArray.length} correct answers.</h2>
         <button
           onClick={checkAnswer}
           className="check"
         >
-          Check Answer
+          {scored === 0 ? "Check answers" : "Play again"}
         </button>
       </div>
   )
